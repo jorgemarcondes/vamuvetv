@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>VamuVe</title>
+
+    <script src="node_modules/jquery/dist/jquery.min.js" charset="utf-8"></script>
+    <script src="node_modules/flipclock/compiled/flipclock.min.js" charset="utf-8"></script>
+    <script src="node_modules/moment/min/moment.min.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="node_modules/flipclock/compiled/flipclock.css">
+
+    <style media="screen">
+      html {
+        height: 100%;
+      }
+
+      html, body, #fullheight {
+        min-height: 100% !important;
+        height: 100%;
+      }
+
+      * { padding: 0; margin: 0; }
+
+      div.inn {
+        background-image: url(oldmovie.gif);
+      }
+      .clock {
+        /*top: 200px;*/
+        /*margin: auto;*/
+        /*width: 50%;*/
+      }
+      .container {
+        height: 100%;
+        background-size: cover;
+      }
+      .fullscreen-bg {
+        position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-image: url(bg3.gif);
+		background-repeat: no-repeat;
+		background-size: cover;
+      }
+
+      .flip-clock-label {
+        display: none;
+      }
+
+      .clock-container {
+        position: fixed;
+        right: 39px;
+        bottom: 0;
+      }
+
+      .video {
+		position: relative;
+		top: 50px;
+		left: 30%;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="fullscreen-bg">
+      </div>
+
+      <div class="video">
+        <iframe width="600" height="400" src="https://www.youtube.com/embed/dJocC9dou4E?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+      </div>
+
+      <div class="clock-container">
+        <div class="clock"></div>
+      </div>
+
+      <script type="text/javascript">
+        var start = moment('20/01/2018', 'DD/MM/YYYY').diff(moment(), 'seconds');
+      	var clock = $('.clock').FlipClock(start, {
+          language: 'portuguese',
+      		clockFace: 'DailyCounter',
+      		countdown: true
+      	});
+      </script>
+    </div>
+  </body>
+</html>
